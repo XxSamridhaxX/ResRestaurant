@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
+
+<!-- When a user fills out this form and clicks the "Register" button, the following happens:
+
+Form Data Submission: The form data is sent to the server using the POST method.
+CSRF Protection: The CSRF token is included with the form data, providing security against CSRF attacks.
+Form Handling: On the server side, the form data is processed by the view function handling the form submission (e.g., register view). This view typically validates the form, creates or updates the User and Customer objects, and then redirects the user to another page or renders a new template. -->
